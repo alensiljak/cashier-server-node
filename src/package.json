@@ -1,0 +1,13 @@
+{
+  "name": "cashier-server-node",
+  "version": "0.0.1",
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "express": "^4.21.1",
+    "typescript": "^5.7.2"
+  }
+}
