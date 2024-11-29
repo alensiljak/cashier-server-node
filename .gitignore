@@ -130,5 +130,5 @@ dist
 .pnp.*
 
 # custom items
-demo.js
-demo.js.map
+app.js
+app.js.map
