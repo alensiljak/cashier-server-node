@@ -2,6 +2,7 @@
   "name": "cashier-server-node",
   "version": "0.0.1",
   "scripts": {
+    "build": "tsc",
     "watch": "tsc --watch"
   },
   "devDependencies": {
@@ -9,5 +10,8 @@
     "@types/node": "^22.10.1",
     "express": "^4.21.1",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "serve-favicon": "^2.5.0"
   }
 }
