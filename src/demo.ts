@@ -1,7 +1,7 @@
 import express from 'express';
 import { exec } from 'child_process';
-const favicon = require('serve-favicon');
-const path = require('path');
+import favicon from 'serve-favicon';
+import path from 'path';
 
 const app = express();
 const port = 3000;
@@ -16,6 +16,16 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.png')));
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
+});
+
+app.get('/ledger', (req, res) => {
+  exec('ledger', (error, stdout, stderr) => {
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+
+    res.send(stdout);
+  })
 });
 
 app.get('/test', (req, res) => {
@@ -36,6 +46,8 @@ app.post('/run-executable', (req, res) => {
     res.json({ output: stdout });
   });
 });
+
+// Run app
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
